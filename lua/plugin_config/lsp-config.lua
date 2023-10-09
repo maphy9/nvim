@@ -1,6 +1,6 @@
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = {"lua_ls", "tsserver", "pylsp", "omnisharp_mono"}
+	ensure_installed = {"lua_ls", "tsserver", "pylsp", "jdtls", "rust_analyzer"}
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -31,7 +31,13 @@ require("lspconfig").pylsp.setup {
 	root_dir = vim.loop.cwd,
 }
 
-require("lspconfig").omnisharp_mono.setup {
+require("lspconfig").jdtls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	root_dir = vim.loop.cwd,
+}
+
+require("lspconfig").rust_analyzer.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	root_dir = vim.loop.cwd,

@@ -23,6 +23,5 @@ return require('packer').startup(function(use)
 	use "https://github.com/terrortylor/nvim-comment"
 
 	-- color scheme
-	use "https://github.com/ellisonleao/gruvbox.nvim"
-
+	use "https://github.com/catppuccin/nvim"
 end)

@@ -22,8 +22,13 @@ vim.api.nvim_set_keymap('n', '<M-Down>', ':m .+1<CR>==', { noremap = true, silen
 vim.api.nvim_set_keymap('x', '<M-Up>', ':move \'<-2<CR>gv-gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '<M-Down>', ':move \'>+1<CR>gv-gv', { noremap = true, silent = true })
 
--- unbind some keys
+-- unbind some keyr
+vim.api.nvim_set_keymap('n', 'c', '<Nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('', '<S-Down>', '<Nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('', '<S-Up>', '<Nop>', { noremap = true, silent = true })
 
-vim.cmd("colorscheme gruvbox")
+-- rust
+vim.g.rust_recommended_style = 0
+
+-- colorscheme
+vim.cmd("colorscheme catppuccin-mocha")
