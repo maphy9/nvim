@@ -1,11 +1,11 @@
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = {"lua_ls", "tsserver", "pylsp", "jdtls", "rust_analyzer"}
+	ensure_installed = {"lua_ls", "tsserver", "pylsp", "clangd", "cssls", "html"}
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local on_attach = function() 
+local on_attach = function()
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 end
 
@@ -31,15 +31,17 @@ require("lspconfig").pylsp.setup {
 	root_dir = vim.loop.cwd,
 }
 
-require("lspconfig").jdtls.setup {
+require("lspconfig").clangd.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	root_dir = vim.loop.cwd,
 }
 
-require("lspconfig").rust_analyzer.setup {
-	on_attach = on_attach,
+require("lspconfig").html.setup {
 	capabilities = capabilities,
-	root_dir = vim.loop.cwd,
+}
+
+require("lspconfig").cssls.setup {
+	capabilities = capabilities,
 }
 

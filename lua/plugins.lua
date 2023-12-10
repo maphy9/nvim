@@ -23,5 +23,5 @@ return require('packer').startup(function(use)
 	use "https://github.com/terrortylor/nvim-comment"
 
 	-- color scheme
-	use "https://github.com/catppuccin/nvim"
+	use "https://github.com/bluz71/vim-moonfly-colors"
 end)

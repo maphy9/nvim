@@ -3,6 +3,7 @@ require("plugin_config")
 
 --Options
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -12,7 +13,15 @@ vim.opt.breakindent = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = false
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
+vim.opt.termguicolors = true
+vim.o.smartindent = false
+
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+
+-- binds
+vim.api.nvim_set_keymap('n', 'U', '<C-r>', { noremap = true })
 
 -- moving selected line
 vim.api.nvim_set_keymap('n', '<M-Up>', ':m .-2<CR>==', { noremap = true, silent = true })
@@ -31,4 +40,4 @@ vim.api.nvim_set_keymap('', '<S-Up>', '<Nop>', { noremap = true, silent = true }
 vim.g.rust_recommended_style = 0
 
 -- colorscheme
-vim.cmd("colorscheme catppuccin-mocha")
+vim.cmd("colorscheme moonfly")
