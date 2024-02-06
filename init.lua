@@ -1,3 +1,4 @@
+--Connecting other folders
 require("plugins")
 require("plugin_config")
 
@@ -15,7 +16,8 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
-vim.o.smartindent = false
+vim.o.autoindent = true
+vim.o.smartindent = true
 
 vim.cmd('autocmd BufEnter * set formatoptions-=cro')
 vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
@@ -31,13 +33,10 @@ vim.api.nvim_set_keymap('n', '<M-Down>', ':m .+1<CR>==', { noremap = true, silen
 vim.api.nvim_set_keymap('x', '<M-Up>', ':move \'<-2<CR>gv-gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '<M-Down>', ':move \'>+1<CR>gv-gv', { noremap = true, silent = true })
 
--- unbind some keyr
+-- unbind some keys
 vim.api.nvim_set_keymap('n', 'c', '<Nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('', '<S-Down>', '<Nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('', '<S-Up>', '<Nop>', { noremap = true, silent = true })
-
--- rust
-vim.g.rust_recommended_style = 0
 
 -- colorscheme
 vim.cmd("colorscheme moonfly")

@@ -4,13 +4,12 @@ local Rule = require('nvim-autopairs.rule')
 npairs.setup({
     check_ts = true,
     ts_config = {
-        lua = {'string'}, 
+        lua = {'string'},
 				javascript = {'template_string'},
     }
 })
 
 local ts_conds = require('nvim-autopairs.ts-conds')
-
 
 npairs.add_rules({
   Rule("%", "%", "lua")

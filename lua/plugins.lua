@@ -5,11 +5,6 @@ return require('packer').startup(function(use)
 	use "https://github.com/nvim-tree/nvim-tree.lua"
 	use "https://github.com/nvim-treesitter/nvim-treesitter"
 	use {
-  	'nvim-telescope/telescope.nvim', 
-		tag = '0.1.2',
-  	requires = { {'nvim-lua/plenary.nvim'} }
-	}
-	use {
 		"https://github.com/williamboman/mason.nvim",
 		"https://github.com/williamboman/mason-lspconfig.nvim",
 		"https://github.com/neovim/nvim-lspconfig"
@@ -21,6 +16,9 @@ return require('packer').startup(function(use)
 	use "https://github.com/rafamadriz/friendly-snippets"
 	use "https://github.com/windwp/nvim-autopairs"
 	use "https://github.com/terrortylor/nvim-comment"
+	use('https://github.com/jose-elias-alvarez/null-ls.nvim')
+	use('https://github.com/MunifTanjim/prettier.nvim')
+	use("https://github.com/ziontee113/color-picker.nvim")
 
 	-- color scheme
 	use "https://github.com/bluz71/vim-moonfly-colors"
