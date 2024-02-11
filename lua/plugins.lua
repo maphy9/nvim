@@ -19,6 +19,10 @@ return require('packer').startup(function(use)
 	use('https://github.com/jose-elias-alvarez/null-ls.nvim')
 	use('https://github.com/MunifTanjim/prettier.nvim')
 	use("https://github.com/ziontee113/color-picker.nvim")
+	use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.5',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
 
 	-- color scheme
 	use "https://github.com/bluz71/vim-moonfly-colors"

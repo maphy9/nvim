@@ -38,39 +38,30 @@ lspconfig.clangd.setup {
 }
 
 -- php
-lspconfig.intelephense.setup({
+lspconfig.phpactor.setup({
 	on_attach = on_attach,
+	cmd = { "phpactor", "language-server" },
 	capabilities = capabilities,
-	settings = {
-		intelephense = {
-			stubs = {
-				'Core',
-				'SPL',
-				'imagick',
-				'standard',
-				'pcre',
-				'date',
-				'json',
-				'ctype',
-				'SimpleXML',
-				'Reflection',
-				'exif',
-			}
-		}
-	}
+	root_dir = vim.loop.cwd,
 })
 
 -- emmet
 lspconfig.emmet_ls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "css",  "html", "javascript", "javascriptreact", "less", "sass", "scss", "typescriptreact", "php" },
+	init_options = {
+		html = {
+			options = {
+				["bem.enabled"] = true,
+			},
+		},
+	}
+})
+
+-- go
+lspconfig.gopls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { "css",  "html", "javascript", "javascriptreact", "less", "sass", "scss", "typescriptreact", "php" },
-    init_options = {
-      html = {
-        options = {
-          ["bem.enabled"] = true,
-        },
-      },
-    }
 })
 
