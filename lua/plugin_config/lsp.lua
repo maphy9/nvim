@@ -4,7 +4,7 @@ local on_attach = function()
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 end
 
--- lua
+-- Lua
 lspconfig.lua_ls.setup {
 	on_attach = on_attach,
 	capabilities = capabilities
@@ -37,19 +37,11 @@ lspconfig.clangd.setup {
 	capabilities = capabilities,
 }
 
--- php
-lspconfig.phpactor.setup({
-	on_attach = on_attach,
-	cmd = { "phpactor", "language-server" },
-	capabilities = capabilities,
-	root_dir = vim.loop.cwd,
-})
-
 -- emmet
 lspconfig.emmet_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "css",  "html", "javascript", "javascriptreact", "less", "sass", "scss", "typescriptreact", "php" },
+	filetypes = { "css",  "html", "javascriptreact", "typescriptreact" },
 	init_options = {
 		html = {
 			options = {
@@ -57,11 +49,5 @@ lspconfig.emmet_ls.setup({
 			},
 		},
 	}
-})
-
--- go
-lspconfig.gopls.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
 })
 
