@@ -14,7 +14,7 @@ lspconfig.lua_ls.setup {
 lspconfig.tsserver.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
+	filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
 	root_dir = vim.loop.cwd,
 }
 
@@ -37,11 +37,25 @@ lspconfig.clangd.setup {
 	capabilities = capabilities,
 }
 
+-- css
+lspconfig.cssls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+-- php
+lspconfig.intelephense.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	root_dir = vim.loop.cwd,
+	filetypes = { "php" },
+})
+
 -- emmet
 lspconfig.emmet_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "css",  "html", "javascriptreact", "typescriptreact" },
+	filetypes = { "php", "css", "html", "javascriptreact", "typescriptreact" },
 	init_options = {
 		html = {
 			options = {
@@ -50,4 +64,3 @@ lspconfig.emmet_ls.setup({
 		},
 	}
 })
-

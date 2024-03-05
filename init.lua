@@ -40,3 +40,12 @@ vim.api.nvim_set_keymap('', '<S-Up>', '<Nop>', { noremap = true, silent = true }
 
 -- colorscheme
 vim.cmd("colorscheme moonfly")
+
+-- transparency
+vim.cmd[[ hi Normal guibg=NONE ctermbg=NONE ]]
+vim.cmd[[ hi NonText guibg=NONE ctermbg=NONE ]]
+vim.cmd[[ hi SignColumn guibg=NONE ctermbg=NONE ]]
+vim.cmd[[ hi NormalNC guibg=NONE ctermbg=NONE ]]
+vim.cmd[[ hi MsgArea guibg=NONE ctermbg=NONE ]]
+vim.cmd[[ hi TelescopeBorder guibg=NONE ctermbg=NONE ]]
+vim.cmd[[ hi NvimTreeNormal guibg=NONE ctermbg=NONE ]]
