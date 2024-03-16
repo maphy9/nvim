@@ -34,6 +34,7 @@ lspconfig.pyright.setup {
 -- C
 lspconfig.clangd.setup {
 	on_attach = on_attach,
+	filetypes = { "c" },
 	capabilities = capabilities,
 }
 
