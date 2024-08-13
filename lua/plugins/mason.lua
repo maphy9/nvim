@@ -9,8 +9,7 @@ local function masonlsp_config()
 end
 
 local function nvimlsp_config()
-	-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
-	local capabilities = {}
+	local capabilities = require('cmp_nvim_lsp').default_capabilities()
 	local lspconfig = require("lspconfig")
 	local on_attach = function()
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
@@ -53,12 +52,12 @@ local function nvimlsp_config()
 		root_dir = function(fname)
 			return lspconfig.util.root_pattern("CMakeLists.txt", "compile_commands.json")(fname)
 		end,
-		cmd = { "clangd", "--compile-commands-dir=build" },
-		settings = {
-			clangd = {
-				compilationDatabasePath = "build",
-			},
-		},
+		-- cmd = { "clangd", "--compile-commands-dir=build" },
+		-- settings = {
+		-- 	clangd = {
+		-- 		compilationDatabasePath = "build",
+		-- 	},
+		-- },
 	}
 
 	-- cmake
