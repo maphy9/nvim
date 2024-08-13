@@ -52,12 +52,6 @@ local function nvimlsp_config()
 		root_dir = function(fname)
 			return lspconfig.util.root_pattern("CMakeLists.txt", "compile_commands.json")(fname)
 		end,
-		-- cmd = { "clangd", "--compile-commands-dir=build" },
-		-- settings = {
-		-- 	clangd = {
-		-- 		compilationDatabasePath = "build",
-		-- 	},
-		-- },
 	}
 
 	-- cmake
