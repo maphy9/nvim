@@ -55,7 +55,7 @@ local function nvimlsp_config()
 	}
 
 	-- cmake
-	lspconfig.clangd.setup {
+	lspconfig.cmake.setup {
 		on_attach = on_attach,
 		capabilities = capabilities,
 	}
