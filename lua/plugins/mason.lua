@@ -1,5 +1,7 @@
 local function mason_config()
-	require("mason").setup()
+	require("mason").setup({
+		ensure_installed = { "clang-format", "codelldb" },
+	})
 end
 
 local function masonlsp_config()
@@ -50,7 +52,7 @@ local function nvimlsp_config()
 		on_attach = on_attach,
 		capabilities = capabilities,
 		root_dir = function(fname)
-			return lspconfig.util.root_pattern("CMakeLists.txt", "compile_commands.json")(fname)
+			return lspconfig.util.root_pattern("CMakeLists.txt", "Makefile")(fname)
 		end,
 	}
 

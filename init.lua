@@ -12,15 +12,19 @@ vim.o.smartcase				= true
 vim.o.smartindent			= true
 vim.o.smarttab				= true
 
-vim.api.nvim_set_keymap('n', '<M-j>', ':m .+1<CR>==', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<M-k>', ':m .-2<CR>==', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', '<M-j>', ':move \'>+1<CR>gv-gv', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', '<M-k>', ':move \'<-2<CR>gv-gv', { noremap = true, silent = true })
+vim.keymap.set('n', '<M-j>', ':m .+1<CR>==', { noremap = true, silent = true })
+vim.keymap.set('n', '<M-k>', ':m .-2<CR>==', { noremap = true, silent = true })
+vim.keymap.set('x', '<M-j>', ':move \'>+1<CR>gv-gv', { noremap = true, silent = true })
+vim.keymap.set('x', '<M-k>', ':move \'<-2<CR>gv-gv', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', 'c', '<Nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('', '<S-Down>', '<Nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('', '<S-Up>', '<Nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('', '<S-j>', '<Nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('', '<S-k>', '<Nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('', '<S-h>', '<Nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('', '<S-l>', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('n', 'c', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('', '<S-Down>', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('', '<S-Up>', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('', '<S-j>', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('', '<S-k>', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('', '<S-h>', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('', '<S-l>', '<Nop>', { noremap = true, silent = true })
+
+vim.keymap.set('n', "<C-S-t>", "<cmd>below terminal<CR>a")
+vim.keymap.set('t', "<C-S-t>", "exit<CR>")
+
