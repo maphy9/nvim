@@ -28,3 +28,4 @@ vim.keymap.set('', '<S-l>', '<Nop>', { noremap = true, silent = true })
 vim.keymap.set('n', "<C-S-t>", "<cmd>below terminal<CR>a")
 vim.keymap.set('t', "<C-S-t>", "exit<CR>")
 
+vim.lsp.set_log_level("off")
