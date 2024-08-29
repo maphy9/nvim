@@ -1,6 +1,4 @@
 local function config()
-	require("luasnip.loaders.from_vscode").lazy_load()
-
 	local cmp = require("cmp")
 	cmp.setup({
 		mapping = cmp.mapping.preset.insert({
@@ -27,6 +25,18 @@ end
 
 return {
 	{
+		"L3MON4D3/LuaSnip",
+	},
+	{
+		"saadparwaiz1/cmp_luasnip",
+	},
+	{
+		"rafamadriz/friendly-snippets",
+		config = function ()
+			require("luasnip.loaders.from_vscode").lazy_load()
+		end
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		config = config,
 	},
@@ -42,13 +52,4 @@ return {
 	{
 		"hrsh7th/cmp-cmdline",
 	},
-	{
-		"L3MON4D3/LuaSnip",
-	},
-	{
-		"saadparwaiz1/cmp_luasnip",
-	},
-	{
-		"rafamadriz/friendly-snippets",
-	}
 }

@@ -17,7 +17,6 @@ local function nvimlsp_config()
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 	end
 
-
 	-- Lua
 	lspconfig.lua_ls.setup {
 		on_attach = on_attach,
@@ -72,7 +71,7 @@ local function nvimlsp_config()
 	lspconfig.emmet_ls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
-		filetypes = { "css", "html", "php", "javascriptreact", "typescriptreact", "htmldjango" },
+		filetypes = { "html", "css", "javascriptreact", "typescriptreact", "htmldjango", "ejs" },
 		init_options = {
 			html = {
 				options = {
