@@ -51,6 +51,7 @@ local function nvimlsp_config()
 	lspconfig.clangd.setup {
 		on_attach = on_attach,
 		capabilities = capabilities,
+		cmd = { "clangd", "--compile-commands-dir=build" },
 		root_dir = function(fname)
 			return lspconfig.util.root_pattern("CMakeLists.txt", "Makefile")(fname)
 		end,
