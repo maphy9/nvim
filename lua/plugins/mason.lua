@@ -6,7 +6,7 @@ end
 
 local function masonlsp_config()
 	require("mason-lspconfig").setup({
-		ensure_installed = { "lua_ls", "tsserver", "clangd", "emmet_ls", "cssls", "pyright", "cmake" },
+		ensure_installed = { "lua_ls", "ts_ls", "clangd", "emmet_ls", "cssls", "pyright", "cmake" },
 	})
 end
 
@@ -26,7 +26,7 @@ local function nvimlsp_config()
 	}
 
 	-- JavaScript and TypeScript
-	lspconfig.tsserver.setup {
+	lspconfig.ts_ls.setup {
 		on_attach = on_attach,
 		capabilities = capabilities,
 		filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
