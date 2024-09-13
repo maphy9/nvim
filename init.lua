@@ -4,13 +4,15 @@ vim.o.smarttab				= true
 vim.o.number					= true
 vim.o.relativenumber	= true
 vim.o.clipboard				= "unnamedplus"
-vim.o.shiftwidth			= 2
 vim.o.tabstop					= 2
+vim.o.shiftwidth			= 2
 vim.o.softtabstop			= 2
+vim.o.expandtab				= true
 vim.o.shiftround			= true
 vim.o.smartcase				= true
 vim.o.smartindent			= true
 vim.o.smarttab				= true
+vim.o.guicursor				= 'n-v-i-c:block-Cursor'
 
 vim.keymap.set('n', '<M-j>', ':m .+1<CR>==', { noremap = true, silent = true })
 vim.keymap.set('n', '<M-k>', ':m .-2<CR>==', { noremap = true, silent = true })
