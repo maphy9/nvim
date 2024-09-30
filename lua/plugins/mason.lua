@@ -6,7 +6,7 @@ end
 
 local function masonlsp_config()
 	require("mason-lspconfig").setup({
-		ensure_installed = { "lua_ls", "ts_ls", "clangd", "emmet_ls", "cssls", "pyright", "cmake" },
+		ensure_installed = { "lua_ls", "ts_ls", "clangd", "emmet_ls", "cssls", "pyright", "cmake", "volar" },
 	})
 end
 
@@ -29,9 +29,17 @@ local function nvimlsp_config()
 	lspconfig.ts_ls.setup {
 		on_attach = on_attach,
 		capabilities = capabilities,
-		filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
-		root_dir = vim.loop.cwd,
+		filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" },
+    root_dir = lspconfig.util.root_pattern('package.json', 'vue.config.js', 'tsconfig.json', 'jsconfig.json', '.git'),
 	}
+
+  -- Vue
+  lspconfig.volar.setup {
+		on_attach = on_attach,
+		capabilities = capabilities,
+		filetypes = { "vue" },
+    root_dir = lspconfig.util.root_pattern('package.json', 'vue.config.js', 'tsconfig.json', 'jsconfig.json', '.git'),
+  }
 
 	-- Python
 	lspconfig.pyright.setup {
