@@ -81,7 +81,7 @@ local function nvimlsp_config()
 	lspconfig.emmet_ls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
-		filetypes = { "css", "html", "php", "javascriptreact", "typescriptreact", "htmldjango" },
+		filetypes = { "css", "html", "javascriptreact", "typescriptreact", "htmldjango", "vue" },
 		init_options = {
 			html = {
 				options = {
