@@ -16,6 +16,11 @@ return {
           end,
         },
       },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+        },
+      },
     },
   }
 }
