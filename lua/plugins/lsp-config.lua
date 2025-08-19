@@ -7,7 +7,7 @@ return {
     "mason-org/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup {
-        ensure_installed = { "lua_ls", "pyright", "gopls" },
+        ensure_installed = { "lua_ls", "pyright", "gopls", "rust_analyzer" },
         automatic_enable = false
       }
     end
@@ -30,6 +30,11 @@ return {
 
       -- go
       lspconfig.gopls.setup {
+        capabilities = capabilities,
+      }
+
+      -- rust
+      lspconfig.rust_analyzer.setup {
         capabilities = capabilities,
       }
 
